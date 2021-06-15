@@ -21,6 +21,9 @@ fun Application.configureRouting() {
 
     routing {
         var fileName: String
+        get("/") {
+            call.respondText("Hello World!")
+        }
         post("/upload") {
             try {
                 val multipartData = call.receiveMultipart()
