@@ -20,7 +20,7 @@ fun Application.configureRouting() {
     val logger : Logger = Logger.getLogger("AntiMCreator")
 
     routing {
-        var fileName = ""
+        var fileName: String
         post("/upload") {
             try {
                 val multipartData = call.receiveMultipart()
