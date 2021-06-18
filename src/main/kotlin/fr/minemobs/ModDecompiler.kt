@@ -32,7 +32,7 @@ class ModDecompiler {
 
     private fun containsMCreatorModInfos(folder: File): Boolean {
         for (path in Files.walk(Paths.get(folder.toURI())).filter(Files::isRegularFile)) {
-            if(path.name.equals("pack.mcmeta", true) || path.name.equals("mods.toml", true)) {
+            if(path.name.equals("mcmod.info", true) || path.name.equals("mods.toml", true)) {
                 val lines = FileUtils.readLines(path.toFile(), Charsets.UTF_8)
                 return lines.stream().filter { line -> line.contains("mcreator", true) }.collect(Collectors.toList()).isNotEmpty()
             }
